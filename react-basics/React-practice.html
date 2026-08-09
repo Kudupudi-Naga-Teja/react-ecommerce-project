@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React practice</title>
+    <style>
+      .on-button {
+        background-color: rgb(25, 135, 84);
+        color: white;
+        padding: 9px 15px;
+        border-radius: 5px;
+        border: none;
+      }
+
+       .off-button {
+        background-color: rgb(220, 53, 69);
+        color: white;
+        padding: 9px 15px;
+        border-radius: 5px;
+        border: none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="js-button"></div>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+      // const paragraph = <p>Current time: {dayjs().format('HH:mm:ss')}</p>
+    
+      // const container = document.querySelector('.js-button');
+      // const root = ReactDOM.createRoot(container);
+      // root.render(paragraph);
+
+      // setInterval(() => {
+      //   const paragraph = <p>Current time: {dayjs().format('HH:mm:ss')}</p>;
+      //   root.render(paragraph);
+      // },1000);
+
+      // function Counter( {count, setCount} ) {
+      //   function increaseCount() {
+      //     setCount(count + 1)
+      //   }
+      //   return (
+      //     <>
+      //      <button onClick={increaseCount}>Clicked {count} {count === 1 ? 'time' : 'times'}</button>
+      //     </>
+      //   );
+      // }
+      // function App() {
+      //   const [count, setCount] = React.useState(0);
+
+      //   function resetCount(){
+      //     setCount(0);
+      //   }
+      //   return (
+      //   <>
+      //     <Counter count={count} setCount={setCount} />
+      //     <Counter count={count} setCount={setCount} />
+      //     <button onClick={resetCount}>Reset score</button>
+      //   </>
+      //   );
+      // }
+
+      // function InputText() {
+      //   const [inputText, setInputText] = React.useState('');
+      //   function saveInput(event) {
+      //     setInputText(event.target.value);
+      //   }
+
+      //   function resetInputText() {
+      //     setInputText('')
+      //   }
+
+      //   function setExampleText() {
+      //     setInputText('Alice');
+      //   }
+
+        
+      //   return (
+      //     <>
+      //       <input 
+      //         onChange={saveInput}
+      //         placeholder="Type a name type"
+      //         value={inputText}
+      //     />
+      //     <button onClick={resetInputText}>Reset</button>
+      //     <button onClick={setExampleText}>Example</button>
+      //     <p>Hello {inputText}</p>
+          
+
+         
+      //   </>
+      //   );
+      // }
+
+
+      function Button() {
+        const [isButtonOn, setIsButtonOn] = React.useState(true)
+
+        function switchButtonOn() {
+          if(isButtonOn) {
+            setIsButtonOn(false);
+          }else {
+            setIsButtonOn(true);
+          }
+        }
+        return (
+        <button className={isButtonOn ? 'on-button' : 'off-button'} onClick={switchButtonOn}>{isButtonOn ? 'ON' : 'OFF'}</button>
+        );
+      }
+
+      
+      const container = document.querySelector('.js-button')
+      ReactDOM.createRoot(container).render(<Button />);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+  </body>
+</html>
